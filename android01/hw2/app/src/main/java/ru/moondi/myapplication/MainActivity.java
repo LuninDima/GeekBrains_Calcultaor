@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.switchmaterial.SwitchMaterial;
+
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonNine;
     private Button buttonZero;
     private TextView editTextScoreBoard;
+    private SwitchMaterial switchMaterialButtonThemes;
     private int buffer = 0;
     private char operation;
 
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonNine = findViewById(R.id.button9);
         buttonZero = findViewById(R.id.button0);
         editTextScoreBoard = findViewById(R.id.editTextScoreBoard);
+        switchMaterialButtonThemes = findViewById(R.id.switch_Button_Themes);
     }
 
     private void initOnclickListener() {
