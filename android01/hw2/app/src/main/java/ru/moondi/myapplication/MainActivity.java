@@ -37,6 +37,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initView();
+        initOnclickListener();
+    }
+
+    private void initView() {
         buttonClear = findViewById(R.id.button_clear);
         buttonPlus = findViewById(R.id.button_plus);
         buttonEqually = findViewById(R.id.button_equally);
@@ -54,7 +59,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonNine = findViewById(R.id.button9);
         buttonZero = findViewById(R.id.button0);
         editTextScoreBoard = findViewById(R.id.editTextScoreBoard);
-        initOnclickListener();
     }
 
     private void initOnclickListener() {
