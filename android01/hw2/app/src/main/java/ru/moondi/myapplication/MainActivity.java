@@ -2,12 +2,16 @@ package ru.moondi.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.Locale;
 
@@ -30,12 +34,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonNine;
     private Button buttonZero;
     private TextView editTextScoreBoard;
+    private SwitchMaterial switchMaterialButtonThemes;
     private int buffer = 0;
     private char operation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         initView();
         initOnclickListener();
@@ -59,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonNine = findViewById(R.id.button9);
         buttonZero = findViewById(R.id.button0);
         editTextScoreBoard = findViewById(R.id.editTextScoreBoard);
+        switchMaterialButtonThemes = findViewById(R.id.switch_Button_Themes);
     }
 
     private void initOnclickListener() {
@@ -78,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonDivision.setOnClickListener(this);
         buttonClear.setOnClickListener(this);
         buttonEqually.setOnClickListener(this);
+        switchMaterialButtonThemes.setOnClickListener(this);
     }
 
     @Override
@@ -109,7 +117,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 editTextScoreBoard.setText("0");
                 buffer = 0;
                 break;
+            case R.id.switch_Button_Themes:
+                switchThemes();
+
         }
+    }
+
+    private void switchThemes() {
+        if (switchMaterialButtonThemes.isChecked()) {
+            setTheme(R.style.Theme_MyApplicationDark);
+        } else {
+            setTheme(R.style.Theme_MyApplicationLight);
+        }
+        recreate();
     }
 
     public void operation(View v) {
@@ -138,9 +158,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (Integer.parseInt(editTextScoreBoard.getText().toString()) != 0) {
                     buffer /= Integer.parseInt(editTextScoreBoard.getText().toString());
                     editTextScoreBoard.setText(String.valueOf(buffer));
-                } else { Toast.makeText(this, "Делить на ноль нельзя", Toast.LENGTH_LONG).show();
-                         editTextScoreBoard.setText("0");
-                         buffer = 0;}
+                } else {
+                    Toast.makeText(this, "Делить на ноль нельзя", Toast.LENGTH_LONG).show();
+                    editTextScoreBoard.setText("0");
+                    buffer = 0;
+                }
 
                 break;
         }

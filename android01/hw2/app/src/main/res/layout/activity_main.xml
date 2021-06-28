@@ -219,6 +219,7 @@
         android:autofillHints="" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch_Button_Themes"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/editTextScoreBoard"
