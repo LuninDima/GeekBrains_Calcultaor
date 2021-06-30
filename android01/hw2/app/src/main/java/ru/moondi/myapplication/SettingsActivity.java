@@ -7,17 +7,19 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SettingsActivity extends AppCompatActivity implements View.OnClickListener {
+public class SettingsActivity extends AppCompatActivity implements View.OnClickListener, Constants {
 
-    private TextView textSettings;
+    private TextView textViewSettings;
+    private String textGetIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        textSettings = (TextView) findViewById(R.id.textView_Settings);
-        Intent intent = new Intent();
+        textViewSettings = (TextView) findViewById(R.id.textView_Settings);
+        textGetIntent = getIntent().getExtras().getString(Constants.INTENT_KEY);
+        textViewSettings.setText(textGetIntent);
 
 
     }
