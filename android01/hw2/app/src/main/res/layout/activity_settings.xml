@@ -8,40 +8,49 @@
     tools:context=".SettingsActivity"
     tools:deviceIds="wear">
 
-
-    <TextView
-        android:id="@+id/textView_Settings"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="@dimen/paddingButton"
-        android:text="@string/text_textView_Settings"
+        android:orientation="vertical"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <RadioButton
-        android:id="@+id/rbutton_Light_Theme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marginButton"
-        android:padding="@dimen/paddingButton"
-        android:text="@string/text_rbutton_Light_Theme"
-        app:layout_constraintEnd_toEndOf="@+id/textView_Settings"
-        app:layout_constraintStart_toStartOf="@+id/textView_Settings"
-        app:layout_constraintTop_toBottomOf="@+id/textView_Settings" />
+        <TextView
+            android:id="@+id/textView_Settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/paddingButton"
+            android:text="@string/text_textView_Settings"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.1" />
+<RadioGroup
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rbutton_Light_Theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginButton"
+            android:padding="@dimen/paddingButton"
+            android:text="@string/text_rbutton_Light_Theme"
+            app:layout_constraintEnd_toEndOf="@+id/textView_Settings"
+            app:layout_constraintStart_toStartOf="@+id/textView_Settings"
+            app:layout_constraintTop_toBottomOf="@+id/textView_Settings" />
 
-    <RadioButton
-        android:id="@+id/rbutton_Dark_Theme"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marginButton"
-        android:padding="@dimen/paddingButton"
-        android:text="@string/text_rbutton_Dark_Theme"
-        app:layout_constraintEnd_toEndOf="@+id/rbutton_Light_Theme"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toStartOf="@+id/rbutton_Light_Theme"
-        app:layout_constraintTop_toBottomOf="@+id/rbutton_Light_Theme" />
+        <RadioButton
+            android:id="@+id/rbutton_Dark_Theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginButton"
+            android:padding="@dimen/paddingButton"
+            android:text="@string/text_rbutton_Dark_Theme" />
+</RadioGroup>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -141,11 +141,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void switchThemes() {
         if (switchMaterialButtonThemes.isChecked()) {
-            setTheme(R.style.Theme_MyApplicationDark);
+            Utils.changeToTheme(this, Utils.THEME_DARK);
         } else {
-            setTheme(R.style.Theme_MyApplicationLight);
+
+            Utils.changeToTheme(this, Utils.THEME_WHITE);
         }
-        recreate();
+
     }
 
     public void operation(View v) {
