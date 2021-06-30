@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Utils.onActivityCreateSetTheme(this);
         setContentView(R.layout.activity_main);
         initView();
         initOnclickListener();
@@ -112,14 +112,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button_equally:
                 operationEqually();
+                Utils.changeToTheme(this, Utils.THEME_WHITE);
                 break;
             case R.id.button_clear:
                 editTextScoreBoard.setText("0");
                 buffer = 0;
-                break;
+                Utils.changeToTheme(this, Utils.THEME_DARK);
+                recreate();
+            break;
             case R.id.switch_Button_Themes:
                 switchThemes();
-
+                break;
         }
     }
 
