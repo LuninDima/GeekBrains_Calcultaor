@@ -3,6 +3,7 @@ package ru.moondi.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -127,10 +128,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 switchThemes();
                 break;
             case R.id.button_Start_Activity_Settings:
-
+                startActivitySettings();
                 break;
         }
     }
+
+    private void startActivitySettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+            intent.putExtra("settings", "настройки");
+            startActivity(intent);
+        }
 
     private void switchThemes() {
         if (switchMaterialButtonThemes.isChecked()) {
