@@ -16,7 +16,7 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, Constants {
 
     private Button buttonClear;
     private Button buttonPlus;
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void startActivitySettings() {
         Intent intent = new Intent(this, SettingsActivity.class);
-            intent.putExtra("settings", "настройки");
+            intent.putExtra(Constants.INTENT_KEY, "настройки");
             startActivity(intent);
         }
 
