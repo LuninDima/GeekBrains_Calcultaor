@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonEight;
     private Button buttonNine;
     private Button buttonZero;
+    private Button buttonStartActivitySettings;
     private TextView editTextScoreBoard;
     private SwitchMaterial switchMaterialButtonThemes;
     private int buffer = 0;
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonEight = findViewById(R.id.button8);
         buttonNine = findViewById(R.id.button9);
         buttonZero = findViewById(R.id.button0);
+        buttonStartActivitySettings = findViewById(R.id.button_Start_Activity_Settings);
         editTextScoreBoard = findViewById(R.id.editTextScoreBoard);
         switchMaterialButtonThemes = findViewById(R.id.switch_Button_Themes);
     }
@@ -85,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonDivision.setOnClickListener(this);
         buttonClear.setOnClickListener(this);
         buttonEqually.setOnClickListener(this);
+        buttonStartActivitySettings.setOnClickListener(this);
         switchMaterialButtonThemes.setOnClickListener(this);
     }
 
@@ -122,6 +125,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             break;
             case R.id.switch_Button_Themes:
                 switchThemes();
+                break;
+            case R.id.button_Start_Activity_Settings:
+
                 break;
         }
     }
