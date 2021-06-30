@@ -41,6 +41,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
             case R.id.rbutton_Dark_Theme:
                 Utils.changeToTheme(this,Utils.THEME_DARK);
                 break;
+
         }
     }
 }
