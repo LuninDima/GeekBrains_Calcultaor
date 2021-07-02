@@ -10,6 +10,7 @@ public class Utils
     public final static int THEME_DEFAULT = 0;
     public final static int THEME_WHITE = 1;
     public final static int THEME_DARK = 2;
+    public final static int THEME_ANCIENT_RUS = 3;
     /**
      * Set the theme of the Activity, and restart it by creating a new Activity of the same type.
      */
@@ -25,12 +26,16 @@ public class Utils
         switch (sTheme)
         {
             case THEME_DEFAULT:
-            case THEME_WHITE:
                 activity.setTheme(R.style.Theme_MyApplicationLight);
                 break;
-            case THEME_DARK:
-                activity.setTheme(R.style.Theme_MyApplicationDark);
+            case THEME_WHITE:
+                activity.setTheme(R.style.AppThemeLight);
                 break;
+            case THEME_DARK:
+                activity.setTheme(R.style.AppThemeDark);
+                break;
+            case THEME_ANCIENT_RUS:
+                activity.setTheme(R.style.AncientRus);
 
         }
     }

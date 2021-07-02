@@ -27,4 +27,6 @@
     <string name="text_textView_Settings">Выбор Темы</string>
     <string name="text_rbutton_Light_Theme">Светлая тема</string>
     <string name="text_rbutton_Dark_Theme">Ночная тема</string>
+    <string name="text_rbutton_AncientRus_Theme">Древнерусская тема</string>
+    <string name="text_rbutton_Default_Theme">По умолчанию</string>
 </resources>
