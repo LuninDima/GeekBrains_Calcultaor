@@ -54,6 +54,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
                 Utils.changeToTheme(this, Utils.THEME_DEFAULT);
 
                 break;
+
         }
     }
 }
