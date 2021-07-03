@@ -18,6 +18,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     private RadioButton rbuttonDarkTheme;
     private RadioButton rbuttonAncientRusTheme;
     private RadioButton rbuttonDefaultTheme;
+    private Button buttonFinishSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,32 +30,47 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         rbuttonDarkTheme = findViewById(R.id.rbutton_Dark_Theme);
         rbuttonAncientRusTheme = findViewById(R.id.rbutton_Anciet_Rus_Theme);
         rbuttonDefaultTheme = findViewById(R.id.rbutton_Default_Theme);
+        buttonFinishSettings = findViewById(R.id.button_Finish_Setthings);
         rbuttonDarkTheme.setOnClickListener(this);
         rbuttonLightTheme.setOnClickListener(this);
         rbuttonAncientRusTheme.setOnClickListener(this);
         rbuttonDefaultTheme.setOnClickListener(this);
+        buttonFinishSettings.setOnClickListener(this);
     }
+
 
     @Override
     public void onClick(View v) {
-        RadioButton rb = (RadioButton) v;
-        switch (rb.getId()) {
-            case R.id.rbutton_Light_Theme:
-                Utils.changeToTheme(this, Utils.THEME_WHITE);
-                recreate();
-                break;
-            case R.id.rbutton_Dark_Theme:
-                Utils.changeToTheme(this, Utils.THEME_DARK);
-                recreate();
-                break;
-            case R.id.rbutton_Anciet_Rus_Theme:
-                Utils.changeToTheme(this, Utils.THEME_ANCIENT_RUS);
-                break;
-            case R.id.rbutton_Default_Theme:
-                Utils.changeToTheme(this, Utils.THEME_DEFAULT);
+        if (v instanceof RadioButton) {
+            RadioButton rb = (RadioButton) v;
+            switch (rb.getId()) {
+                case R.id.rbutton_Light_Theme:
+                    Utils.changeToTheme(this, Utils.THEME_WHITE);
+                    recreate();
+                    break;
+                case R.id.rbutton_Dark_Theme:
+                    Utils.changeToTheme(this, Utils.THEME_DARK);
+                    recreate();
+                    break;
+                case R.id.rbutton_Anciet_Rus_Theme:
+                    Utils.changeToTheme(this, Utils.THEME_ANCIENT_RUS);
+                    break;
+                case R.id.rbutton_Default_Theme:
+                    Utils.changeToTheme(this, Utils.THEME_DEFAULT);
 
-                break;
-
+                    break;
+                case R.id.button_Finish_Setthings:
+                    finish();
+            }
+        } else if (v instanceof Button) {
+            Button b = (Button) v;
+            switch (b.getId()) {
+                case R.id.button_Finish_Setthings:
+                    finish();
+                    break;
+            }
         }
     }
+
+
 }
