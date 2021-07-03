@@ -29,4 +29,5 @@
     <string name="text_rbutton_Dark_Theme">Ночная тема</string>
     <string name="text_rbutton_AncientRus_Theme">Древнерусская тема</string>
     <string name="text_rbutton_Default_Theme">По умолчанию</string>
+    <string name="text_Button_Finish_Settings">Закрыть</string>
 </resources>

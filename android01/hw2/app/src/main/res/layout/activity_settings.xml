@@ -63,12 +63,17 @@
                 android:text="@string/text_rbutton_AncientRus_Theme" />
             <RadioButton
                 android:id="@+id/rbutton_Default_Theme"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginButton"
                 android:padding="@dimen/paddingButton"
                 android:text="@string/text_rbutton_Default_Theme" />
         </RadioGroup>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_Finish_Setthings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_Button_Finish_Settings"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
