@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Utils.onActivityCreateSetTheme(this);
+        setTheme(convertCodeToStyle(getAppTheme()));
         setContentView(R.layout.activity_main);
         initView();
         initOnclickListener();
@@ -134,9 +135,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void startActivitySettings() {
         Intent intent = new Intent(this, SettingsActivity.class);
             intent.putExtra(Constants.INTENT_KEY, "настройки");
-            startActivity(intent);
+            startActivityForResult(intent, REQUEST_CODE_SETTING_ACTIVITY);
         }
+protected void onActivityResult(int requestCode, int resultCode, Intent data){
+if(requestCode != REQUEST_CODE_SETTING_ACTIVITY){
+    super.onActivityResult(requestCode, resultCode, data);
+    return;
+}
+if(resultCode == RESULT_OK){
+    recreate();
+}
+}
 
+    private  int getAppTheme(){
+        SharedPreferences sharedPreferences = getSharedPreferences(KEY_PREFERENCE, MODE_PRIVATE);
+        return sharedPreferences.getInt(APP_THEME, DEFAULT_THEME);
+
+    }
+    private int convertCodeToStyle(int codeStyle) {
+        switch (codeStyle){
+            case LIGHT_THEME:
+                return R.style.AppThemeLight;
+            case DARK_THEME:
+                return R.style.AppThemeDark;
+            case ANCIENTRUS_THEME:
+                return R.style.AncientRus;
+            default: DEFAULT_THEME:
+            return R.style.Theme_MyApplicationLight;
+        }
+    }
     private void switchThemes() {
         if (switchMaterialButtonThemes.isChecked()) {
             Utils.changeToTheme(this, Utils.THEME_DARK);

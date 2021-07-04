@@ -8,4 +8,6 @@ public interface Constants {
     int DEFAULT_THEME = 3;
     String KEY_PREFERENCE = "KEY_PREFERENCE_THEME";
     String APP_THEME = "APP_THEME";
+    int REQUEST_CODE_SETTING_ACTIVITY = 01;
+
 }

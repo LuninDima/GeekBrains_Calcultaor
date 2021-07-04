@@ -1,5 +1,6 @@
 package ru.moondi.myapplication;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -38,6 +39,7 @@ public class SettingsActivity extends AppCompatActivity implements Constants {
         buttonFinishSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                setResult(RESULT_OK);
                 finish();
             }
         });
@@ -81,40 +83,5 @@ public class SettingsActivity extends AppCompatActivity implements Constants {
         return sharedPreferences.getInt(APP_THEME, DEFAULT_THEME);
 
     }
-
-
-   /* @Override
-    public void onClick(View v) {
-        if (v instanceof RadioButton) {
-            RadioButton rb = (RadioButton) v;
-            switch (rb.getId()) {
-                case R.id.rbutton_Light_Theme:
-                    Utils.changeToTheme(this, Utils.THEME_WHITE);
-                    recreate();
-                    break;
-                case R.id.rbutton_Dark_Theme:
-                    Utils.changeToTheme(this, Utils.THEME_DARK);
-                    recreate();
-                    break;
-                case R.id.rbutton_Anciet_Rus_Theme:
-                    Utils.changeToTheme(this, Utils.THEME_ANCIENT_RUS);
-                    break;
-                case R.id.rbutton_Default_Theme:
-                    Utils.changeToTheme(this, Utils.THEME_DEFAULT);
-
-                    break;
-                case R.id.button_Finish_Setthings:
-                    finish();
-            }
-        } else if (v instanceof Button) {
-            Button b = (Button) v;
-            switch (b.getId()) {
-                case R.id.button_Finish_Setthings:
-                    finish();
-                    break;
-            }
-        }
-    }*/
-
 
 }
