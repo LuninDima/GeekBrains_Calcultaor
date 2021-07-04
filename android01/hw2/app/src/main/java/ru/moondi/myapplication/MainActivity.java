@@ -116,13 +116,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button_equally:
                 operationEqually();
-                Utils.changeToTheme(this, Utils.THEME_WHITE);
                 break;
             case R.id.button_clear:
                 editTextScoreBoard.setText("0");
                 buffer = 0;
-                Utils.changeToTheme(this, Utils.THEME_DARK);
-                recreate();
             break;
             case R.id.switch_Button_Themes:
                 switchThemes();
