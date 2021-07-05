@@ -1,6 +1,7 @@
 package ru.moondi.myapplication;
 
 public interface Constants {
+
     String INTENT_KEY = "INTENT_KEY";
     int LIGHT_THEME = 0;
     int DARK_THEME = 1;

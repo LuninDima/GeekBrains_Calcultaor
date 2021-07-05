@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonZero;
     private Button buttonStartActivitySettings;
     private TextView editTextScoreBoard;
-    private SwitchMaterial switchMaterialButtonThemes;
     private int buffer = 0;
     private char operation;
 
@@ -69,7 +68,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonZero = findViewById(R.id.button0);
         buttonStartActivitySettings = findViewById(R.id.button_Start_Activity_Settings);
         editTextScoreBoard = findViewById(R.id.editTextScoreBoard);
-        switchMaterialButtonThemes = findViewById(R.id.switch_Button_Themes);
     }
 
     private void initOnclickListener() {
@@ -90,7 +88,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonClear.setOnClickListener(this);
         buttonEqually.setOnClickListener(this);
         buttonStartActivitySettings.setOnClickListener(this);
-        switchMaterialButtonThemes.setOnClickListener(this);
     }
 
     @Override
@@ -122,9 +119,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 editTextScoreBoard.setText("0");
                 buffer = 0;
             break;
-            case R.id.switch_Button_Themes:
-                switchThemes();
-                break;
             case R.id.button_Start_Activity_Settings:
                 startActivitySettings();
 
@@ -163,14 +157,6 @@ if(resultCode == RESULT_OK){
             default: DEFAULT_THEME:
             return R.style.Theme_MyApplicationLight;
         }
-    }
-    private void switchThemes() {
-        if (switchMaterialButtonThemes.isChecked()) {
-            Utils.changeToTheme(this, Utils.THEME_DARK);
-        } else {
-            Utils.changeToTheme(this, Utils.THEME_WHITE);
-        }
-
     }
 
     public void operation(View v) {

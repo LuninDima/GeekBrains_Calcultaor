@@ -200,37 +200,21 @@
 
     <EditText
         android:id="@+id/editTextScoreBoard"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/width_Edit_Text"
+        android:layout_height="@dimen/height_Edit_Text"
         android:autofillHints=""
         android:background="@color/white"
-        android:backgroundTint="#00BCD4"
+        android:backgroundTint="@color/color_Edit_Text"
         android:ems="10"
         android:hint="@string/hint_editTextScoreBoard"
         android:inputType="number|text"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_Size_Edit_text"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="@+id/button_division"
         app:layout_constraintHeight_percent="0.1"
         app:layout_constraintStart_toStartOf="@+id/button1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.5" />
-
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/switch_Button_Themes"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/editTextScoreBoard"
-        app:layout_constraintEnd_toStartOf="@+id/editTextScoreBoard"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/editTextScoreBoard"
-        app:layout_constraintVertical_bias="0.5"
-        app:layout_constraintWidth_percent="0.15"
-        app:layout_constraintHeight_percent="0.1"
-        />
 
     <Button
         android:id="@+id/button_Start_Activity_Settings"
