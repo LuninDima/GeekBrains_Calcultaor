@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
+import org.w3c.dom.Text;
+
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, Constants {
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView editTextScoreBoard;
     private int buffer = 0;
     private char operation;
+    String text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         initView();
         initOnclickListener();
+        getTextIntent();
+    }
+
+    private void getTextIntent() {
+        Intent getIntent = getIntent();
+        text = getIntent.getStringExtra(Intent.EXTRA_TEXT);
+        if(text != null) {
+            isDigit(text);
+            if (isDigit(text)) {
+                editTextScoreBoard.setText(text);
+            } else
+                Toast.makeText(this, "Полученный параметр не является числом", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private static boolean isDigit(String s) throws NumberFormatException {
+        try {
+            Integer.parseInt(s);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
     private void initView() {
@@ -68,6 +93,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonZero = findViewById(R.id.button0);
         buttonStartActivitySettings = findViewById(R.id.button_Start_Activity_Settings);
         editTextScoreBoard = findViewById(R.id.editTextScoreBoard);
+
+
+
     }
 
     private void initOnclickListener() {
