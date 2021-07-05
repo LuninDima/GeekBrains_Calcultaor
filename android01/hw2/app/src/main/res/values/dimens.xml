@@ -20,4 +20,6 @@
     <dimen name="width_Edit_Text">0dp</dimen>
     <dimen name="height_Edit_Text">0dp</dimen>
     <dimen name="text_Size_Edit_text">24sp</dimen>
+    <dimen name="text_Size_Button_settings">24sp</dimen>
+
 </resources>

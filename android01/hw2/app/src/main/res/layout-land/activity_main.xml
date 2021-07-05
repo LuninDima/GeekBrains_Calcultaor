@@ -224,5 +224,16 @@
         app:layout_constraintVertical_bias="0.9"
         app:layout_constraintWidth_percent="0.2" />
 
+    <Button
+        android:id="@+id/button_Start_Activity_Settings"
+        android:layout_width="@dimen/widthButton"
+        android:layout_height="@dimen/heightButton"
+        android:layout_margin="@dimen/marginButton"
+        android:text="@string/text_Button_Settings"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_division"
+        app:layout_constraintStart_toEndOf="@+id/editTextScoreBoard"
+        app:layout_constraintTop_toTopOf="@+id/editTextScoreBoard" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
