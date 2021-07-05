@@ -10,29 +10,23 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 public class SettingsActivity extends AppCompatActivity implements Constants {
 
+
     private TextView textViewSettings;
-    private String textGetIntent;
-    private RadioButton rbuttonLightTheme;
-    private RadioButton rbuttonDarkTheme;
-    private RadioButton rbuttonAncientRusTheme;
-    private RadioButton rbuttonDefaultTheme;
     private Button buttonFinishSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(convertCodeToStyle(getAppTheme()));
+
+        setTheme(Utils.convertCodeToStyle(getAppTheme()));
         setContentView(R.layout.activity_settings);
         textViewSettings = (TextView) findViewById(R.id.textView_Settings);
-        rbuttonAncientRusTheme = findViewById(R.id.rbutton_Anciet_Rus_Theme);
-        rbuttonDefaultTheme = findViewById(R.id.rbutton_Default_Theme);
-        buttonFinishSettings = findViewById(R.id.button_Finish_Setthings);
+        buttonFinishSettings = (Button) findViewById(R.id.button_Finish_Setthings);
         initChangerTheme();
         initFinish();
-
-
     }
 
     private void initFinish() {
@@ -45,24 +39,11 @@ public class SettingsActivity extends AppCompatActivity implements Constants {
         });
     }
 
-    private int convertCodeToStyle(int codeStyle) {
-        switch (codeStyle){
-            case LIGHT_THEME:
-                return R.style.AppThemeLight;
-            case DARK_THEME:
-                return R.style.AppThemeDark;
-            case ANCIENTRUS_THEME:
-                return R.style.AncientRus;
-            default: DEFAULT_THEME:
-                return R.style.Theme_MyApplicationLight;
-        }
-    }
-
     private void initChangerTheme() {
         initButton(findViewById(R.id.rbutton_Light_Theme), LIGHT_THEME);
-        initButton(findViewById(R.id.rbutton_Dark_Theme),DARK_THEME);
-        initButton(findViewById(R.id.rbutton_Anciet_Rus_Theme),ANCIENTRUS_THEME);
-        initButton(findViewById(R.id.rbutton_Default_Theme),DEFAULT_THEME);
+        initButton(findViewById(R.id.rbutton_Dark_Theme), DARK_THEME);
+        initButton(findViewById(R.id.rbutton_Anciet_Rus_Theme), ANCIENTRUS_THEME);
+        initButton(findViewById(R.id.rbutton_Default_Theme), DEFAULT_THEME);
     }
 
     private void initButton(RadioButton button, int codeStyle) {
@@ -71,17 +52,15 @@ public class SettingsActivity extends AppCompatActivity implements Constants {
             recreate();
         });
     }
-
-    private void setAppTheme(int codeStyle) {
+    public void setAppTheme(int codeStyle) {
         SharedPreferences sharedPreferences = getSharedPreferences(KEY_PREFERENCE, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(APP_THEME, codeStyle);
         editor.apply();
     }
-    private  int getAppTheme(){
+    private int getAppTheme(){
         SharedPreferences sharedPreferences = getSharedPreferences(KEY_PREFERENCE, MODE_PRIVATE);
         return sharedPreferences.getInt(APP_THEME, DEFAULT_THEME);
-
     }
 
 }

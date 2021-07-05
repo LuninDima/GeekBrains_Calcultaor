@@ -123,7 +123,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 buffer = 0;
             break;
             case R.id.switch_Button_Themes:
-                switchThemes();
                 break;
             case R.id.button_Start_Activity_Settings:
                 startActivitySettings();
@@ -163,14 +162,6 @@ if(resultCode == RESULT_OK){
             default: DEFAULT_THEME:
             return R.style.Theme_MyApplicationLight;
         }
-    }
-    private void switchThemes() {
-        if (switchMaterialButtonThemes.isChecked()) {
-            Utils.changeToTheme(this, Utils.THEME_DARK);
-        } else {
-            Utils.changeToTheme(this, Utils.THEME_WHITE);
-        }
-
     }
 
     public void operation(View v) {
