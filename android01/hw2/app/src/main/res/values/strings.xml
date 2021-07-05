@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Калькулятор</string>
     <string name="text_button_clear">clear</string>
     <string name="text_button_plus">+</string>
     <string name="text_button_equally">=</string>
